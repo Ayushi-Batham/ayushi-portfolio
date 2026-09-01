@@ -1,0 +1,44 @@
+'use client';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Download, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+
+const fade={hidden:{opacity:0,y:20},show:{opacity:1,y:0,transition:{duration:.55}}};
+const skills={
+ 'Frontend':['Angular','React','TypeScript','JavaScript','AngularJS','RxJS','HTML5','CSS3','SCSS','IBM Carbon'],
+ 'Backend':['Java','Spring Boot','Spring','Node.js','Express.js','REST APIs','SOAP'],
+ 'Data & Cloud':['MySQL','MongoDB','SQL','AWS','EC2','S3'],
+ 'Tools & Practices':['Git','GitHub','Jira','Postman','Maven','Harness','VS Code','Eclipse','Unit Testing','Agile','SOLID']
+};
+const jobs=[
+ ['IBM Software Labs','Software Engineer · TAZ Functional Test Automation','Current','Built VS Code Webview experiences, REST workflows, test-generation capabilities and secure credential management for enterprise test automation.'],
+ ['IBM Software Labs','Software Engineer · TAZ Early Development Testing','2025','Worked across Angular, TypeScript and Java/Spring Boot workflows, test tooling and developer productivity.'],
+ ['IBM Consulting','Software Engineer · DISH BSS','2024 – 2025','Developed enterprise full-stack features across Angular, Spring Boot, REST APIs, SQL and testing workflows.'],
+ ['IBM Consulting','Software Engineer · SCA-AWS Supply Chain','2023 – 2024','Contributed to full-stack supply-chain applications using Java, Spring Boot, Angular and AWS technologies.'],
+ ['IBM Consulting','Software Engineer · Royal Bank of Canada','2022 – 2023','Built and enhanced enterprise banking application functionality with Java, Angular, REST APIs and SQL.'],
+ ['Maersk Group','Software Engineer','2021 – 2022','Worked on enterprise application development and integration in an Agile environment.'],
+];
+const projects=[
+ {title:'TAZ Functional Test Automation',featured:true,desc:'Enterprise VS Code extension and developer tooling for functional test automation. Focused on Webview UI, REST workflows, session management, test preparation and test artifact workflows.',tags:['TypeScript','VS Code API','Node.js','REST APIs'],impact:'10+ Webview components · 15+ REST workflows · 100+ test cases'},
+ {title:'TAZ Early Development Testing',desc:'Developer tooling and test workflow capabilities supporting early development and validation within the TAZ ecosystem.',tags:['Angular','TypeScript','Java','Spring Boot']},
+ {title:'DISH BSS',desc:'Enterprise business support system work spanning frontend, backend services, REST APIs, databases and automated testing.',tags:['Angular','Java','Spring Boot','SQL']},
+ {title:'SCA-AWS Supply Chain',desc:'Full-stack supply-chain application work with cloud-enabled workflows and enterprise integrations.',tags:['Java','Angular','AWS','REST']},
+ {title:'Raksha',desc:'Academic project focused on safety and emergency assistance workflows.',tags:['JavaScript','Web Development']},
+ {title:'Polling Meter',desc:'Public GitHub project showcasing a polling-based application implementation.',tags:['JavaScript','Web']}
+];
+const concepts=[['REST APIs','Request → Controller → Service → Repository → Database → Response'],['Angular','Components, services, routing, RxJS and HTTP communication working together to build responsive applications.'],['Spring Boot','Layered backend architecture with controllers, services, repositories, validation, exception handling and REST endpoints.'],['Microservices','Independent services communicating through well-defined APIs, with clear ownership and deployable boundaries.'],['SQL & Databases','Application data modeled in relational tables and accessed through queries, transactions and persistence layers.'],['Engineering Practices','OOP, SOLID, design patterns, unit testing, debugging, RCA, Agile and SDLC.']];
+
+function Section({id,kicker,title,children}:{id:string;kicker:string;title:string;children:React.ReactNode}){return <section id={id} className="section container"><div className="section-head"><div className="kicker">{kicker}</div><h2>{title}</h2></div>{children}</section>}
+function Tags({items}:{items:string[]}){return <div className="tags">{items.map(x=><span className="tag" key={x}>{x}</span>)}</div>}
+
+export default function Home(){return <main>
+<nav className="nav"><div className="container navin"><a href="#home" className="brand">AYUSHI<span style={{color:'#a855f7'}}>.</span></a><div className="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div><a className="btn secondary" href="/resume.pdf"><Download size={15}/> Resume</a></div></nav>
+<section id="home" className="hero container"><motion.div initial="hidden" animate="show" variants={fade}><div className="eyebrow">FULL STACK SOFTWARE ENGINEER</div><h1>Ayushi Batham</h1><h2>Java · Spring Boot · Angular · React · TypeScript</h2><p>I build enterprise applications, developer tooling and full-stack solutions — turning complex workflows into reliable, maintainable software.</p><div className="actions"><a className="btn" href="#projects">Explore My Work <ArrowUpRight size={17}/></a><a className="btn secondary" href="/resume.pdf"><Download size={17}/> Download Resume</a></div><div className="socials"><a href="https://www.linkedin.com/in/ayushi-batham-bb0979173/" target="_blank"><Linkedin size={18}/> LinkedIn</a><a href="https://github.com/Ayushi-Batham" target="_blank"><Github size={18}/> GitHub</a><a href="mailto:bathamayushi18@gmail.com"><Mail size={18}/> Email</a></div></motion.div></section>
+<section id="about" className="section container"><div className="stats"><div className="stat"><strong>5+</strong><span>Years Experience</span></div><div className="stat"><strong>IBM</strong><span>Software Engineering</span></div><div className="stat"><strong>100+</strong><span>Test Cases Automated</span></div><div className="stat"><strong>90%</strong><span>Backend Test Coverage</span></div></div></section>
+<Section id="skills" kicker="01 · Technical capabilities" title="My toolbox"><div className="skills">{Object.entries(skills).map(([name,items])=><motion.div whileHover={{y:-4}} className="skill card" key={name}><h3>{name}</h3><Tags items={items}/></motion.div>)}</div></Section>
+<Section id="experience" kicker="02 · Experience" title="Where I've worked"><div className="timeline">{jobs.map(([company,role,date,desc])=><div className="job" key={company+role}><h3>{company}</h3><div className="meta">{role} · {date}</div><p>{desc}</p></div>)}</div></Section>
+<Section id="projects" kicker="03 · Selected work" title="Things I've built"><div className="projects">{projects.map(p=><motion.article whileHover={{y:-6}} className={'project card '+(p.featured?'featured':'')} key={p.title}><div><div className="kicker">{p.featured?'Featured project':'Project'}</div><h3>{p.title}</h3><p>{p.desc}</p><Tags items={p.tags}/>{p.impact&&<p style={{color:'#c084fc',fontWeight:600}}>{p.impact}</p>}</div><div className="bottom"><span className="learn">View case study <ArrowUpRight size={15} style={{verticalAlign:'middle'}}/></span></div></motion.article>)}</div></Section>
+<Section id="engineering" kicker="04 · How I build" title="Engineering concepts"><p className="section-intro">A practical view of the technologies and patterns behind the applications I work on.</p><div className="concepts" style={{marginTop:28}}>{concepts.map(([title,text])=><div className="concept card" key={title}><h3>{title}</h3><p>{text}</p></div>)}</div></Section>
+<Section id="education" kicker="05 · Education & certifications" title="Learning & credentials"><div className="projects"><div className="project card"><div className="kicker">Education</div><h3>B.Tech (Hons.) — Computer Science & Engineering</h3><p>APJ Abdul Kalam Technical University · 85.1%</p></div><div className="project card"><div className="kicker">Certifications</div><h3>Azure Fundamentals · AZ-900</h3><p>Microsoft Certified</p><h3>Google Cloud Digital Leader</h3></div></div></Section>
+<section id="contact" className="contact container"><div className="kicker">06 · Contact</div><h2>Let's build something<br/><span style={{color:'#a855f7'}}>great together.</span></h2><p className="section-intro" style={{margin:'0 auto 30px'}}>Interested in software engineering, full-stack development or developer tooling? Let's connect.</p><div className="actions"><a className="btn" href="mailto:bathamayushi18@gmail.com">Email Ayushi <Mail size={17}/></a><a className="btn secondary" href="https://www.linkedin.com/in/ayushi-batham-bb0979173/" target="_blank">LinkedIn <ExternalLink size={15}/></a></div></section>
+<footer className="footer"><div className="container footerin"><span>© 2026 Ayushi Batham</span><span>Built with Next.js · TypeScript · Tailwind · Framer Motion</span></div></footer>
+</main>}
