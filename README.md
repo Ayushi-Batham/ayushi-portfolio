@@ -4,7 +4,7 @@
 
 Hi, I'm **Ayushi Batham**, a Full Stack Software Engineer with **5+ years of experience** building enterprise applications, developer tooling, and end-to-end software solutions.
 
-I currently work with **IBM Software Labs**, where I contribute to the **TAZ ecosystem**, including functional test automation and early development testing workflows. My experience spans frontend development, backend services, REST API integration, developer tooling, test automation, debugging, and enterprise engineering workflows.
+I currently work with **IBM Software Labs**, and my experience spans frontend development, backend services, REST API integration, developer tooling, test automation, debugging, and enterprise engineering workflows.
 
 My core strength is working across the stack — understanding how a feature moves from the user interface through API and business-logic layers to persistence, while keeping the solution maintainable, testable, and reliable. I enjoy breaking complex requirements into smaller components, understanding existing systems before making changes, and improving both code quality and developer experience.
 
@@ -18,19 +18,6 @@ I have hands-on experience with **Java, Spring Boot, Angular, React, TypeScript,
 - **Developer Tooling** — Building VS Code extension functionality, Webview interfaces, session workflows, file management, and API-driven developer experiences.
 - **Test Automation** — Designing workflows that simplify functional testing and improve development productivity.
 - **Cloud & Enterprise Engineering** — Working with AWS technologies, CI/CD workflows, enterprise integrations, debugging, and production-oriented engineering practices.
-
-## Featured Work — TAZ Functional Test Automation
-
-One of my key areas of work at IBM has been the **TAZ Functional Test Automation** experience. I have worked on VS Code-based developer tooling, Webview components, REST workflows, test generation, session management, secure credential handling, and test artifact workflows.
-
-Highlights include:
-
-- Built and enhanced **10+ reusable Webview components**.
-- Worked on **15+ REST API workflows**.
-- Contributed to bulk test-generation capabilities supporting **100+ test cases**.
-- Implemented secure handling of VS Code credentials.
-- Worked on debugging, integration, and defect resolution across the workflow.
-- Improved developer workflows by connecting UI, APIs, test preparation, and tooling capabilities.
 
 ## Technology Stack
 
@@ -65,4 +52,6 @@ APJ Abdul Kalam Technical University · **85.1%**
 
 ### Portfolio
 
-This portfolio is built with **Next.js, TypeScript, Tailwind CSS, and Framer Motion**, using a dark purple visual theme with subtle animations and an engineering-focused presentation.
+This repository contains my personal portfolio website, built with **Next.js, TypeScript, Tailwind CSS, and Framer Motion**, using a dark purple visual theme with subtle animations and an engineering-focused presentation.
+
+> Project-specific details are intentionally kept on the portfolio website rather than in this repository README.
